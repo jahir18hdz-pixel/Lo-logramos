@@ -15,87 +15,55 @@ const words = [
 ];
 
 export function IntroScene() {
-  const {
-    start,
-    loading,
-    unavailable,
-  } = useAudio();
+  const { start, loading, unavailable } = useAudio();
 
   const handleStartJourney = () => {
-    /*
-     * Se intenta iniciar la música directamente dentro del clic.
-     * No usamos await para que el desplazamiento no espere al audio.
-     */
-    void start();
-
-    /*
-     * Iniciamos el desplazamiento inmediatamente.
-     */
     const introSection = document.getElementById('intro');
 
-    if (!introSection) {
-      window.scrollTo({
-        top: window.scrollY + window.innerHeight,
-        behavior: 'smooth',
-      });
-
-      return;
-    }
-
-    /*
-     * Busca la siguiente sección dentro del contenido principal.
-     */
     const sections = Array.from(
       document.querySelectorAll<HTMLElement>('main section'),
     );
 
-    const currentIndex = sections.findIndex(
+    const introIndex = sections.findIndex(
       (section) => section === introSection,
     );
 
     const nextSection =
-      currentIndex >= 0
-        ? sections[currentIndex + 1]
-        : null;
+      introIndex >= 0 ? sections[introIndex + 1] : null;
 
+    /*
+     * Primero se ordena el desplazamiento.
+     */
     if (nextSection) {
-      nextSection.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
+      const targetPosition =
+        nextSection.getBoundingClientRect().top + window.scrollY;
 
-      return;
+      window.scrollTo({
+        top: targetPosition,
+        behavior: 'smooth',
+      });
+    } else if (introSection) {
+      window.scrollTo({
+        top: introSection.offsetTop + introSection.offsetHeight,
+        behavior: 'smooth',
+      });
+    } else {
+      window.scrollTo({
+        top: window.scrollY + window.innerHeight,
+        behavior: 'smooth',
+      });
     }
 
     /*
-     * Respaldo por si la siguiente escena no es un elemento section.
+     * Inmediatamente después se inicia la canción.
+     * No usamos await, setTimeout ni requestAnimationFrame
+     * para conservar la autorización del clic en celular.
      */
-    const nextElement =
-      introSection.nextElementSibling as HTMLElement | null;
-
-    if (nextElement) {
-      nextElement.scrollIntoView({
-        behavior: 'smooth',
-        block: 'start',
-      });
-
-      return;
-    }
-
-    /*
-     * Último respaldo.
-     */
-    window.scrollTo({
-      top: window.scrollY + window.innerHeight,
-      behavior: 'smooth',
-    });
+    void start();
   };
 
   return (
-    <Section
-      id="intro"
-      className="text-center"
-    >
+    <Section id="intro" className="text-center">
       <div className="mx-auto max-w-5xl">
         <p className="caption">
           18 · 01 · 2004 — hasta hoy
@@ -180,7 +148,6 @@ export function IntroScene() {
           <motion.button
             type="button"
             onClick={handleStartJourney}
-            disabled={loading}
             whileHover={{
               y: -3,
               scale: 1.02,
@@ -212,8 +179,7 @@ export function IntroScene() {
               duration-300
               hover:border-[var(--color-primary)]/35
               hover:bg-white
-              disabled:cursor-wait
-              disabled:opacity-70
+              active:scale-95
               sm:px-8
               sm:text-base
             "
