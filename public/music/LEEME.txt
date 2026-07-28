@@ -1,0 +1,7 @@
+Coloca aquí tu canción con este nombre exacto:
+
+cancion.mp3
+
+Ruta final: public/music/cancion.mp3
+
+La música comienza cuando el visitante pulsa el botón de la esquina inferior derecha, porque los navegadores bloquean el audio automático.

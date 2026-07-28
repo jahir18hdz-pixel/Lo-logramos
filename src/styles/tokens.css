@@ -1,0 +1,25 @@
+:root {
+  --color-background: #f4f8fa;
+  --color-background-soft: #e5eff4;
+  --color-primary: #4f7487;
+  --color-secondary: #7899aa;
+  --color-accent: #41677b;
+  --color-beige: #f5efe8;
+  --color-white: #ffffff;
+  --color-line: rgb(47 65 86 / 16%);
+  --color-ink: #2f4156;
+
+  --font-sans: Inter, Geist, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
+
+  --content-width: 72rem;
+  --reading-width: 42rem;
+  --section-x: clamp(1.25rem, 6vw, 5.5rem);
+  --section-y: clamp(5rem, 10vh, 7.5rem);
+
+  --radius-sm: .9rem;
+  --radius-md: 1.35rem;
+  --radius-lg: 2rem;
+  --shadow-glow: 0 1.5rem 5rem rgb(21 39 55 / 18%);
+  --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
+}

@@ -1,0 +1,9 @@
+Reemplaza o agrega aquí las imágenes del carrusel de herramientas con estos nombres:
+
+herramienta-1.jpeg
+herramienta-2.jpeg
+herramienta-3.jpeg
+herramienta-4.jpeg
+
+Puedes cambiar títulos y rutas en:
+src/features/invitation/InvitationScene.tsx

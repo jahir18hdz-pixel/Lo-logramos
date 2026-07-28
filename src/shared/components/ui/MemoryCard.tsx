@@ -1,0 +1,2 @@
+import type { PropsWithChildren } from 'react'; import { GlassCard } from './GlassCard';
+export function MemoryCard({ label, children }: PropsWithChildren<{ label: string }>) { return <GlassCard><span className="caption">{label}</span><div className="mt-4">{children}</div></GlassCard>; }

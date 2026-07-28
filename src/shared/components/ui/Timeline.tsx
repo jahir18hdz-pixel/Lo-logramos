@@ -1,0 +1,2 @@
+export interface TimelineItem { mark: string; title: string; description: string }
+export function Timeline({ items }: { items: TimelineItem[] }) { return <div className="mt-10 max-w-2xl">{items.map(item => <article key={`${item.mark}-${item.title}`} className="grid grid-cols-[5rem_1fr] gap-5 border-t border-[var(--color-line)] py-6 last:border-b"><span className="caption pt-1">{item.mark}</span><div><h3 className="heading-m text-xl">{item.title}</h3><p className="mt-2 leading-7 text-[var(--color-ink)]/65">{item.description}</p></div></article>)}</div>; }

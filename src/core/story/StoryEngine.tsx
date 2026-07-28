@@ -1,0 +1,2 @@
+import type { StoryDefinition } from '@/shared/types/story'; import { Chapter } from './Chapter';
+export function StoryEngine({ story }: { story: StoryDefinition }) { return <>{story.chapters.map(chapter=><Chapter key={chapter.id} chapter={chapter}/>)}</>; }

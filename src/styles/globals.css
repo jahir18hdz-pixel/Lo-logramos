@@ -1,0 +1,19 @@
+@import "tailwindcss";
+@import "./tokens.css";
+
+* { box-sizing: border-box; }
+html { background: var(--color-background); scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; overflow-x: hidden; background: var(--color-background); color: var(--color-ink); font-family: var(--font-sans); font-weight: 400; }
+button, a { font: inherit; }
+::selection { background: var(--color-primary); color: white; }
+
+.heading-xl { font-size: clamp(2.65rem, 6.5vw, 5.6rem); line-height: .98; letter-spacing: -.048em; font-weight: 650; }
+.heading-l { font-size: clamp(2rem, 4.8vw, 3.9rem); line-height: 1.06; letter-spacing: -.038em; font-weight: 620; }
+.heading-m { font-size: clamp(1.25rem, 2.3vw, 1.9rem); line-height: 1.2; letter-spacing: -.022em; font-weight: 600; }
+.body-copy { font-size: clamp(.96rem, 1.2vw, 1.08rem); line-height: 1.82; color: rgb(47 65 86 / 76%); }
+.caption { font-family: var(--font-mono); font-size: .62rem; letter-spacing: .14em; text-transform: uppercase; color: var(--color-primary); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

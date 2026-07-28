@@ -1,0 +1,3 @@
+import type { ButtonHTMLAttributes } from 'react';
+import { cn } from '@/shared/utils/cn';
+export function Button({ className, ...props }: ButtonHTMLAttributes<HTMLButtonElement>) { return <button className={cn('inline-flex min-h-12 items-center justify-center rounded-full border border-[var(--color-accent)]/25 bg-[var(--color-accent)] px-6 font-semibold text-[var(--color-background)] transition duration-300 hover:-translate-y-0.5 hover:shadow-[var(--shadow-glow)] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[var(--color-accent)]', className)} {...props} />; }

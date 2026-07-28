@@ -1,0 +1,2 @@
+import type { StoryChapter } from '@/shared/types/story'; import { Scene } from './Scene';
+export function Chapter({ chapter }: { chapter: StoryChapter }) { return <article id={chapter.id} aria-label={chapter.label}>{chapter.scenes.map(scene=><Scene key={scene.id} scene={scene}/>)}</article>; }
