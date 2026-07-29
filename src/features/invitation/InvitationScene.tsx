@@ -16,6 +16,16 @@ const giftIdeas = [
   { src: '/regalos/herramienta-3.jpeg', title: 'Herramienta 03' },
   { src: '/regalos/herramienta-4.jpeg', title: 'Herramienta 04' },
   { src: '/regalos/herramienta-5.jpeg', title: 'Herramienta 05' },
+  { src: '/regalos/herramienta-6.jpeg', title: 'Herramienta 06' },
+  { src: '/regalos/herramienta-7.jpeg', title: 'Herramienta 07' },
+  { src: '/regalos/herramienta-8.jpeg', title: 'Herramienta 08' },
+  { src: '/regalos/herramienta-9.jpeg', title: 'Herramienta 09' },
+  { src: '/regalos/herramienta-10.jpeg', title: 'Herramienta 10' },
+  { src: '/regalos/herramienta-11.jpeg', title: 'Herramienta 11' },
+  { src: '/regalos/herramienta-12.jpeg', title: 'Herramienta 12' },
+  { src: '/regalos/herramienta-13.jpeg', title: 'Herramienta 13' },
+  { src: '/regalos/herramienta-14.jpeg', title: 'Herramienta 14' },
+  { src: '/regalos/herramienta-15.jpeg', title: 'Herramienta 15' },
 ];
 
 function GiftCarousel() {
