@@ -2,21 +2,48 @@ import { Section } from '@/shared/components/story/Section';
 import { Title } from '@/shared/components/ui/Title';
 import { Subtitle } from '@/shared/components/ui/Subtitle';
 import { Paragraph } from '@/shared/components/ui/Paragraph';
+import { PhotoFrame } from '@/shared/components/ui/PhotoFrame';
+
+import parentsPhoto from '@/shared/assets/images/mis-papas.jpeg';
 
 export function ParentsScene() {
   return (
     <Section>
       <p className="caption">Mis primeros refugios</p>
+
       <Title className="mt-4">
-        Antes de enseñarme a caminar, ya me habían enseñado a <span className="text-[var(--color-accent)]">sentirme amado</span>.
+        Antes de enseñarme a caminar, ya me habían enseñado a{' '}
+        <span className="text-[var(--color-accent)]">
+          sentirme amado
+        </span>
+        .
       </Title>
-      <Subtitle>Mis papás aprendieron a ser padres al mismo tiempo que yo aprendía a descubrir el mundo.</Subtitle>
+
+      <Subtitle>
+        Mis papás aprendieron a ser padres al mismo tiempo que yo aprendía
+        a descubrir el mundo.
+      </Subtitle>
+
       <Paragraph>
-        Me acompañaron a consultas, hicieron preguntas, buscaron respuestas y tomaron decisiones pensando siempre en mi bienestar. Nunca dejaron que mi oreja definiera lo que yo podía llegar a ser.
+        Me acompañaron a consultas, hicieron preguntas, buscaron respuestas
+        y tomaron decisiones pensando siempre en mi bienestar. Nunca dejaron
+        que mi oreja definiera lo que yo podía llegar a ser.
       </Paragraph>
+
       <Paragraph>
-        Con los años, mi mamá también estuvo muy presente en la escuela, ayudándome a ser más responsable, a cumplir con mis tareas y a no rendirme cuando algo se complicaba. Cada logro que hoy lleva mi nombre tiene detrás una parte de su paciencia, sus desvelos y su confianza.
+        Con los años, mi mamá también estuvo muy presente en la escuela,
+        ayudándome a ser más responsable, a cumplir con mis tareas y a no
+        rendirme cuando algo se complicaba. Cada logro que hoy lleva mi
+        nombre tiene detrás una parte de su paciencia, sus desvelos y su
+        confianza.
       </Paragraph>
+
+      <PhotoFrame
+        wide
+        src={parentsPhoto}
+        alt="Fotografía con mis papás"
+        caption="Mis papás, mis primeros refugios"
+      />
     </Section>
   );
 }
